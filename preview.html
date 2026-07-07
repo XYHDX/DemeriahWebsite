@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yahya Demeriah | Robotics & AI Engineer — Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#ede6d4;--bg-elev:#f7f1de;--card:#f7f1de;--card-h:#e6dec8;--border:#d2c8ac;--border-s:#b5a884;--text:#162622;--dim:#4a5a52;--soft:#6e7d72;--accent:#0e4d40;--accent2:#a8843d;--accent3:#8b1a1a;--nav:rgba(237,230,212,.82);--chip:rgba(14,77,64,.08);--glow:0 0 40px -10px rgba(14,77,64,.3);--radius:16px}
+[data-theme="dark"]{--bg:#0a1612;--bg-elev:#102019;--card:#102019;--card-h:#163024;--border:#1e3a2c;--border-s:#2a4f3d;--text:#ede5cf;--dim:#a3ad9d;--soft:#74807a;--accent:#2d9b7e;--accent2:#d4b878;--accent3:#cf3a4a;--nav:rgba(10,22,18,.78);--chip:rgba(45,155,126,.1);--glow:0 0 40px -10px rgba(45,155,126,.35)}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;transition:background .3s,color .3s}
+body[dir="rtl"]{font-family:Cairo,Inter,sans-serif}
+a{color:inherit;text-decoration:none}
+svg{width:1em;height:1em;vertical-align:-.15em}
+.accent{color:var(--accent)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.wrap.narrow{max-width:900px}
+.center{text-align:center}
+.label{display:inline-block;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:14px}
+.label.sm{letter-spacing:.15em;margin-bottom:6px}
+h2{font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:16px}
+.intro{color:var(--dim);font-size:17px;max-width:680px;margin-bottom:40px}
+.intro.cen{margin-inline:auto}
+.sec{padding:96px 0;background:var(--bg)}
+.sec.alt{background:var(--bg-elev)}
+/* nav */
+nav{position:fixed;inset:0 0 auto 0;z-index:100;background:var(--nav);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-in{max-width:1160px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-weight:900;font-size:19px;letter-spacing:.14em}
+.nav-links{display:flex;gap:26px}
+.nav-links a{font-size:14px;color:var(--dim);font-weight:500}
+.nav-links a:hover{color:var(--accent)}
+.nav-right{display:flex;gap:10px;align-items:center}
+.toggle{border:1px solid var(--border-s);background:none;color:var(--text);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+.toggle:hover{border-color:var(--accent);color:var(--accent)}
+@media(max-width:860px){.nav-links{display:none}}
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 0 60px}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(color-mix(in srgb,var(--accent) 7%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--accent) 7%,transparent) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse at center,#000 40%,transparent 78%);mask-image:radial-gradient(ellipse at center,#000 40%,transparent 78%)}
+.hero-inner{position:relative;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border-s);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--dim);margin-bottom:24px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent3);box-shadow:0 0 0 0 rgba(207,58,74,.5);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(207,58,74,.5)}70%{box-shadow:0 0 0 10px rgba(207,58,74,0)}100%{box-shadow:0 0 0 0 rgba(207,58,74,0)}}
+.hero h1{font-size:clamp(40px,7vw,76px);font-weight:900;line-height:1.05;letter-spacing:-.03em;margin-bottom:18px}
+.role{font-size:clamp(17px,2.2vw,23px);color:var(--dim);font-weight:500;margin-bottom:20px}
+.bio{color:var(--dim);font-size:17px;max-width:640px;margin:0 auto 28px}
+.meta{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;font-size:14px;color:var(--soft);margin-bottom:32px}
+.ic{display:inline-flex;align-items:center;gap:8px}
+.ic svg{color:var(--accent);width:16px;height:16px}
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{background:var(--accent);color:#fff;border-radius:999px;padding:12px 22px;font-weight:600;font-size:14px;box-shadow:var(--glow)}
+.btn.ghost{background:none;color:var(--text);border:1px solid var(--border-s);box-shadow:none}
+.btn:hover{transform:translateY(-2px)}
+/* about */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.lead{color:var(--dim);font-size:16px;margin-bottom:14px}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.pill{border:1px solid var(--border);background:var(--card);border-radius:999px;padding:8px 14px;font-size:13px;color:var(--dim)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stat{border:1px solid var(--border);background:var(--card);border-radius:var(--radius);padding:24px}
+.num{font-size:clamp(28px,4vw,40px);font-weight:900;color:var(--accent);line-height:1}
+.slabel{font-size:13px;color:var(--dim);text-transform:uppercase;letter-spacing:.04em;margin-top:8px}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:36px}}
+/* cards */
+.card{border:1px solid var(--border);background:var(--card);border-radius:var(--radius);padding:24px;transition:.25s}
+.card:hover{border-color:var(--border-s);background:var(--card-h)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tag{font-size:11px;font-weight:600;color:var(--accent);background:var(--chip);border-radius:6px;padding:4px 9px}
+.tag.soft{color:var(--dim);border:1px solid var(--border)}
+/* timeline */
+.timeline{margin-top:8px}
+.tl-item{display:flex;gap:20px}
+.tl-marker{display:flex;flex-direction:column;align-items:center}
+.tl-dot{width:16px;height:16px;border-radius:50%;background:var(--bg-elev);border:3px solid var(--accent);margin-top:6px;flex:none}
+.tl-line{flex:1;width:2px;background:var(--accent);opacity:.4;margin:6px 0}
+.tl-item.last .tl-line{display:none}
+.tl-item .card{flex:1;margin-bottom:28px}
+.tl-meta{font-size:12px;color:var(--soft);margin-bottom:8px}
+.card h3{font-size:19px;font-weight:700}
+.company{color:var(--accent);font-weight:600;font-size:15px;margin:4px 0 12px}
+.company a{display:inline-flex;align-items:center;gap:4px}
+.company a:hover{text-decoration:underline}
+.card p{color:var(--dim);font-size:15px}
+/* projects */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px}
+.pcard{display:flex;flex-direction:column}
+.pcard-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
+.picon{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--chip);color:var(--accent)}
+.picon svg{width:20px;height:20px}
+.ribbon{font-size:11px;font-weight:700;border-radius:999px;padding:4px 10px;background:color-mix(in srgb,var(--accent2) 16%,transparent);color:var(--accent2)}
+.pcat{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.pcard h3{margin:8px 0 10px;line-height:1.3}
+.pcard p{flex:1}
+.pfoot{margin-top:16px;font-size:13px;font-weight:600}
+.pfoot a{color:var(--accent);display:inline-flex;gap:6px;align-items:center}
+.muted{color:var(--soft);display:inline-flex;gap:6px;align-items:center}
+@media(max-width:960px){.pgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.pgrid{grid-template-columns:1fr}}
+/* awards */
+.agrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.acard{position:relative;overflow:hidden}
+.ayear{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--accent)}
+.acard h3{font-size:16px;margin:8px 0 6px;line-height:1.3}
+.aorg{font-size:13px;color:var(--dim)}
+.aloc{font-size:12px;color:var(--soft);margin-top:4px}
+.prize{display:inline-block;margin-top:12px;font-size:11px;font-weight:700;border-radius:6px;padding:4px 10px;background:var(--chip);color:var(--accent2)}
+@media(max-width:960px){.agrid{grid-template-columns:1fr 1fr}}
+/* skills */
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sgrid h4{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:12px}
+@media(max-width:960px){.sgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.sgrid{grid-template-columns:1fr}}
+.edu{margin-top:48px}
+.eduhead{font-size:22px;margin-bottom:18px}
+.years{font-size:13px;color:var(--soft);margin-top:6px}
+.eduproj{margin-top:18px;padding-top:18px;border-top:1px solid var(--border)}
+.eduproj b{display:block;margin:4px 0 8px}
+.eduproj p{color:var(--dim);font-size:15px}
+/* contact */
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;max-width:900px;margin-inline:auto}
+.ccard{text-align:center;padding:26px 18px}
+.ccard:hover{border-color:var(--accent);transform:translateY(-3px)}
+.clabel{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--soft)}
+.cval{font-size:15px;font-weight:600;margin-top:6px;word-break:break-word}
+@media(max-width:760px){.cgrid{grid-template-columns:1fr 1fr}}
+/* footer */
+footer{border-top:1px solid var(--border);background:var(--bg-elev);padding:56px 0 32px}
+.fgrid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:32px}
+.fgrid .lead{max-width:400px}
+.fnav{display:flex;flex-direction:column;gap:10px}
+.fnav a{color:var(--dim);font-size:14px}
+.fnav a:hover{color:var(--accent)}
+.fbar{border-top:1px solid var(--border);padding-top:20px;color:var(--soft);font-size:13px}
+</style>
+</head>
+<body dir="ltr">
+<nav><div class="nav-in">
+  <a href="#home" class="logo">DEMERIAH<span class="accent">.</span></a>
+  <div class="nav-links"><a href="#about"><span class="t" data-en="About" data-ar="نبذة">About</span></a><a href="#experience"><span class="t" data-en="Experience" data-ar="الخبرات">Experience</span></a><a href="#projects"><span class="t" data-en="Projects" data-ar="المشاريع">Projects</span></a><a href="#achievements"><span class="t" data-en="Awards" data-ar="الجوائز">Awards</span></a><a href="#skills"><span class="t" data-en="Skills" data-ar="المهارات">Skills</span></a><a href="#contact"><span class="t" data-en="Contact" data-ar="تواصل">Contact</span></a></div>
+  <div class="nav-right">
+    <button class="toggle" id="langBtn">العربية</button>
+    <button class="toggle" id="themeBtn">☾</button>
+  </div>
+</div></nav>
+
+<section class="hero" id="home">
+  <div class="grid-bg"></div>
+  <div class="wrap hero-inner">
+    <span class="badge"><i class="dot"></i><span class="t" data-en="Available for opportunities" data-ar="متاح للفرص الجديدة">Available for opportunities</span></span>
+    <h1><span class="t" data-en="Eng. Yahya" data-ar="م. يحيى">Eng. Yahya</span><br><span class="accent"><span class="t" data-en="Demeriah" data-ar="ضميرية">Demeriah</span></span></h1>
+    <p class="role"><span class="t" data-en="Robotics &amp; AI Engineer · Founder · Mentor" data-ar="مهندس روبوتيكس وذكاء صناعي · مؤسس · مدرّب">Robotics &amp; AI Engineer · Founder · Mentor</span></p>
+    <p class="bio"><span class="t" data-en="Control &amp; Computer Engineering graduate specialized in Robotics. CEO of Robotronics, building Syria's first solar panel cleaning robot. Founder of 3D Titans — pioneering 3D printing in the Syrian market. Award-winning innovator in AI, IoT and intelligent systems." data-ar="خريج هندسة التحكم والحاسوب — اختصاص الروبوتيكس. المدير التنفيذي لشركة روبوترونيكس التي تطوّر أول روبوت سوري لتنظيف الألواح الشمسية. مؤسس مشروع 3D Titans والمسؤول عن إدخال الطباعة ثلاثية الأبعاد إلى السوق السوري. حائز على جوائز في الذكاء الصناعي وإنترنت الأشياء.">Control &amp; Computer Engineering graduate specialized in Robotics. CEO of Robotronics, building Syria's first solar panel cleaning robot. Founder of 3D Titans — pioneering 3D printing in the Syrian market. Award-winning innovator in AI, IoT and intelligent systems.</span></p>
+    <div class="meta">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg><span class="t" data-en="Damascus, Syria" data-ar="دمشق، سوريا">Damascus, Syria</span></span>
+      <a class="ic" href="mailto:yahyademeriah@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>yahyademeriah@gmail.com</a>
+      <a class="ic" href="https://yahyademeriah.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg>yahyademeriah.com</a>
+    </div>
+    <div class="cta">
+      <a class="btn" href="#contact"><span class="t" data-en="Get in Touch" data-ar="تواصل معي">Get in Touch</span></a>
+      <a class="btn ghost" href="/Yahya_Demeriah_CV.docx"><span class="t" data-en="Download CV" data-ar="تحميل السيرة الذاتية">Download CV</span></a>
+    </div>
+  </div>
+</section>
+<section class="sec" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="label"><span class="t" data-en="About Me" data-ar="من أنا">About Me</span></span>
+      <h2><span class="t" data-en="Engineering the" data-ar="نصنع المستقبل">Engineering the</span> <span class="accent"><span class="t" data-en="Future from Damascus" data-ar="من دمشق">Future from Damascus</span></span></h2>
+      <p class="lead"><span class="t" data-en="I'm Eng. Yahya Demeriah, a graduate of the Faculty of Control &amp; Computer Engineering, specializing in Robotics. My work sits at the intersection of robotics, AI, embedded systems and 3D printing — turning hard engineering problems into practical, production-ready products." data-ar="اسمي المهندس يحيى ضميرية، خريج كلية هندسة التحكم والحاسوب اختصاص الروبوتيكس. أعمل عند تقاطع الروبوتيكس والذكاء الصناعي والأنظمة المضمّنة والطباعة ثلاثية الأبعاد — أحوّل المسائل الهندسية الصعبة إلى منتجات عملية جاهزة للإنتاج.">I'm Eng. Yahya Demeriah, a graduate of the Faculty of Control &amp; Computer Engineering, specializing in Robotics. My work sits at the intersection of robotics, AI, embedded systems and 3D printing — turning hard engineering problems into practical, production-ready products.</span></p><p class="lead"><span class="t" data-en="As CEO of Robotronics I'm leading the development of a remote-controlled solar panel cleaning robot. As founder of 3D Titans, I'm the engineer who introduced 3D printing into the Syrian market. I also lead Eyronix, an AI-powered smart surveillance platform for facilities and individuals." data-ar="بصفتي المدير التنفيذي لشركة روبوترونيكس أقود تطوير روبوت لتنظيف الألواح الشمسية بالريموت كنترول. وبصفتي مؤسس مشروع 3D Titans، أنا المهندس المسؤول عن إدخال الطباعة ثلاثية الأبعاد إلى السوق السوري. كما أقود مشروع Eyronix لأنظمة المراقبة الذكية للمنشآت والأفراد بدعم من الذكاء الصناعي.">As CEO of Robotronics I'm leading the development of a remote-controlled solar panel cleaning robot. As founder of 3D Titans, I'm the engineer who introduced 3D printing into the Syrian market. I also lead Eyronix, an AI-powered smart surveillance platform for facilities and individuals.</span></p><p class="lead"><span class="t" data-en="Beyond company-building, I founded the AI Club at the French School in Damascus, work as Trainer-of-Trainers at Syra Robot, and mentor students competing internationally in robotics and AI." data-ar="إلى جانب ريادة الأعمال، أسّستُ نادي الذكاء الصنعي في المدرسة الفرنسية بدمشق وأعمل مدرّباً فيه، كما أعمل مدرّباً للمدربين في نادي سيرا روبوت، وأُشرف على الطلاب في مركز سيرا روبوت.">Beyond company-building, I founded the AI Club at the French School in Damascus, work as Trainer-of-Trainers at Syra Robot, and mentor students competing internationally in robotics and AI.</span></p>
+      <div class="pills"><span class="pill"><span class="t" data-en="CEO · Robotronics" data-ar="مدير تنفيذي · روبوترونيكس">CEO · Robotronics</span></span><span class="pill"><span class="t" data-en="Founder · 3D Titans" data-ar="مؤسس · 3D Titans">Founder · 3D Titans</span></span><span class="pill"><span class="t" data-en="Founder · Eyronix" data-ar="مؤسس · Eyronix">Founder · Eyronix</span></span><span class="pill"><span class="t" data-en="AI Club Lead · French School" data-ar="مدرّب · نادي الذكاء الصنعي بالمدرسة الفرنسية">AI Club Lead · French School</span></span><span class="pill"><span class="t" data-en="Trainer-of-Trainers · Syra Robot" data-ar="مدرّب للمدربين · سيرا روبوت">Trainer-of-Trainers · Syra Robot</span></span></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">8+</div><div class="slabel"><span class="t" data-en="Ventures Founded" data-ar="شركة ومشروع">Ventures Founded</span></div></div><div class="stat"><div class="num">12+</div><div class="slabel"><span class="t" data-en="Engineering Projects" data-ar="مشاريع هندسية">Engineering Projects</span></div></div><div class="stat"><div class="num">50+</div><div class="slabel"><span class="t" data-en="Students Mentored" data-ar="طالب درّبهم">Students Mentored</span></div></div><div class="stat"><div class="num">5</div><div class="slabel"><span class="t" data-en="Competition Awards" data-ar="جوائز مسابقات">Competition Awards</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="sec alt" id="experience">
+  <div class="wrap narrow">
+    <span class="label"><span class="t" data-en="Career Path" data-ar="المسيرة المهنية">Career Path</span></span>
+    <h2><span class="t" data-en="Professional" data-ar="الخبرات">Professional</span> <span class="accent"><span class="t" data-en="Experience" data-ar="العملية">Experience</span></span></h2>
+    <p class="intro"><span class="t" data-en="From founding companies to mentoring the next generation of Syrian engineers." data-ar="من تأسيس الشركات إلى تدريب الجيل القادم من المهندسين السوريين.">From founding companies to mentoring the next generation of Syrian engineers.</span></p>
+    <div class="timeline">
+      
+      <div class="tl-item ">
+        <div class="tl-marker"><span class="tl-dot"></span><span class="tl-line"></span></div>
+        <div class="card">
+          <div class="tl-meta">2024 — Present · <span class="t" data-en="Damascus, Syria" data-ar="دمشق، سوريا">Damascus, Syria</span></div>
+          <h3><span class="t" data-en="CEO &amp; Co-founder" data-ar="مدير تنفيذي وشريك مؤسس">CEO &amp; Co-founder</span></h3>
+          <div class="company"><span class="t" data-en="Robotronics" data-ar="روبوترونيكس">Robotronics</span> · <a href="https://robotronicsevo.com">robotronicsevo.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+          <p><span class="t" data-en="Leading the development of Syria's first remote-controlled solar panel cleaning robot. Owning mechanical design, electronics architecture, PCB development, embedded firmware and 3D-printed components — taking the product from concept to field-deployable hardware." data-ar="أقود تطوير أول روبوت سوري لتنظيف الألواح الشمسية بالريموت كنترول. أتولى التصميم الميكانيكي وبنية الإلكترونيات وتصميم اللوحات المطبوعة والبرمجيات المضمّنة والقطع المطبوعة ثلاثية الأبعاد — من الفكرة إلى منتج جاهز للنشر الميداني.">Leading the development of Syria's first remote-controlled solar panel cleaning robot. Owning mechanical design, electronics architecture, PCB development, embedded firmware and 3D-printed components — taking the product from concept to field-deployable hardware.</span></p>
+          <div class="tags"><span class="tag">Solar Robotics</span><span class="tag">PCB Design</span><span class="tag">Embedded</span><span class="tag">Renewable Energy</span></div>
+        </div>
+      </div>
+      <div class="tl-item ">
+        <div class="tl-marker"><span class="tl-dot"></span><span class="tl-line"></span></div>
+        <div class="card">
+          <div class="tl-meta">2025 — Present · <span class="t" data-en="International" data-ar="دولي">International</span></div>
+          <h3><span class="t" data-en="Founder" data-ar="مؤسس">Founder</span></h3>
+          <div class="company"><span class="t" data-en="3D Titans" data-ar="3D Titans">3D Titans</span> · <a href="https://3dtitans.org">3dtitans.org <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+          <p><span class="t" data-en="The engineer responsible for introducing 3D printing into the Syrian market. Building a 3D asset marketplace and on-demand fabrication platform with licensing workflows and production-ready model standards." data-ar="المهندس المسؤول عن إدخال الطباعة ثلاثية الأبعاد إلى السوق السوري. أبني سوقاً رقمية للأصول الثلاثية الأبعاد ومنصة تصنيع عند الطلب مع نظام تراخيص ومعايير إنتاج.">The engineer responsible for introducing 3D printing into the Syrian market. Building a 3D asset marketplace and on-demand fabrication platform with licensing workflows and production-ready model standards.</span></p>
+          <div class="tags"><span class="tag">3D Printing</span><span class="tag">Marketplace</span><span class="tag">Manufacturing</span></div>
+        </div>
+      </div>
+      <div class="tl-item ">
+        <div class="tl-marker"><span class="tl-dot"></span><span class="tl-line"></span></div>
+        <div class="card">
+          <div class="tl-meta">2025 — Present · <span class="t" data-en="Syria" data-ar="سوريا">Syria</span></div>
+          <h3><span class="t" data-en="Founder &amp; Technical Lead" data-ar="مؤسس وقائد تقني">Founder &amp; Technical Lead</span></h3>
+          <div class="company"><span class="t" data-en="Eyronix" data-ar="Eyronix">Eyronix</span> · <a href="https://eyronix.com">eyronix.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+          <p><span class="t" data-en="Founded a smart-surveillance technology platform installing intelligent monitoring systems for facilities and individuals. Designed the system architecture for AI-powered image analysis — people detection, vehicle detection and behavioral analytics using computer vision." data-ar="أسّستُ منصة تقنية لأنظمة المراقبة الذكية للمنشآت والأفراد. صمّمتُ بنية النظام لتحليل الصور بالذكاء الصناعي — كشف الأشخاص والمركبات وتحليل السلوك باستخدام الرؤية الحاسوبية.">Founded a smart-surveillance technology platform installing intelligent monitoring systems for facilities and individuals. Designed the system architecture for AI-powered image analysis — people detection, vehicle detection and behavioral analytics using computer vision.</span></p>
+          <div class="tags"><span class="tag">Computer Vision</span><span class="tag">AI/ML</span><span class="tag">Security</span><span class="tag">Networking</span></div>
+        </div>
+      </div>
+      <div class="tl-item ">
+        <div class="tl-marker"><span class="tl-dot"></span><span class="tl-line"></span></div>
+        <div class="card">
+          <div class="tl-meta">2024 — Present · <span class="t" data-en="Damascus, Syria" data-ar="دمشق، سوريا">Damascus, Syria</span></div>
+          <h3><span class="t" data-en="Trainer-of-Trainers &amp; Student Supervisor" data-ar="مدرّب للمدربين ومشرف على الطلاب">Trainer-of-Trainers &amp; Student Supervisor</span></h3>
+          <div class="company"><span class="t" data-en="Syra Robot" data-ar="سيرا روبوت">Syra Robot</span></div>
+          <p><span class="t" data-en="Train the trainers who coach the next generation of Syrian robotics students. Personally supervise students at the Syra Robot center across competition prep, hardware projects and applied robotics." data-ar="أُدرّب المدرّبين الذين يعلّمون الجيل القادم من طلاب الروبوتيكس في سوريا. أُشرف شخصياً على الطلاب في مركز سيرا روبوت في تجهيز المسابقات والمشاريع.">Train the trainers who coach the next generation of Syrian robotics students. Personally supervise students at the Syra Robot center across competition prep, hardware projects and applied robotics.</span></p>
+          <div class="tags"><span class="tag">Robotics Training</span><span class="tag">WRO Coaching</span><span class="tag">Mentorship</span></div>
+        </div>
+      </div>
+      <div class="tl-item ">
+        <div class="tl-marker"><span class="tl-dot"></span><span class="tl-line"></span></div>
+        <div class="card">
+          <div class="tl-meta">2024 — Present · <span class="t" data-en="Damascus, Syria" data-ar="دمشق، سوريا">Damascus, Syria</span></div>
+          <h3><span class="t" data-en="Founder &amp; Trainer · AI Club" data-ar="مؤسس ومدرّب · نادي الذكاء الصنعي">Founder &amp; Trainer · AI Club</span></h3>
+          <div class="company"><span class="t" data-en="French School of Damascus" data-ar="المدرسة الفرنسية في دمشق">French School of Damascus</span></div>
+          <p><span class="t" data-en="Founded the AI club at the French School in Damascus and lead it as the in-house trainer. Built the curriculum from zero, covering machine learning fundamentals, computer vision, and applied AI projects with students." data-ar="أسّستُ نادي الذكاء الصنعي في المدرسة الفرنسية بدمشق وأعمل به كمدرّب داخلي. بنيتُ المنهاج من الصفر ليغطّي أساسيات تعلّم الآلة والرؤية الحاسوبية والمشاريع التطبيقية.">Founded the AI club at the French School in Damascus and lead it as the in-house trainer. Built the curriculum from zero, covering machine learning fundamentals, computer vision, and applied AI projects with students.</span></p>
+          <div class="tags"><span class="tag">AI Education</span><span class="tag">Curriculum Design</span><span class="tag">K-12 Mentoring</span></div>
+        </div>
+      </div>
+      <div class="tl-item ">
+        <div class="tl-marker"><span class="tl-dot"></span><span class="tl-line"></span></div>
+        <div class="card">
+          <div class="tl-meta">Sep 2024 — Mar 2025 · <span class="t" data-en="Damascus, Syria" data-ar="دمشق، سوريا">Damascus, Syria</span></div>
+          <h3><span class="t" data-en="Full-Time Lecturer &amp; Project Mentor" data-ar="محاضر متفرّغ ومرشد مشاريع">Full-Time Lecturer &amp; Project Mentor</span></h3>
+          <div class="company"><span class="t" data-en="Syrian Private University" data-ar="الجامعة السورية الخاصة">Syrian Private University</span></div>
+          <p><span class="t" data-en="Developed and delivered lab courses in ROS, MATLAB, Proteus, Processing, 8086 Emulator, mikroC, and Arduino C. Mentored graduation and junior projects." data-ar="طوّرت وقدّمتُ مختبرات في ROS وMATLAB وProteus وProcessing ومحاكي 8086 وmikroC وArduino C. أرشدتُ مشاريع التخرّج والمشاريع السنوية.">Developed and delivered lab courses in ROS, MATLAB, Proteus, Processing, 8086 Emulator, mikroC, and Arduino C. Mentored graduation and junior projects.</span></p>
+          <div class="tags"><span class="tag">ROS</span><span class="tag">MATLAB</span><span class="tag">Arduino</span><span class="tag">Education</span></div>
+        </div>
+      </div>
+      <div class="tl-item last">
+        <div class="tl-marker"><span class="tl-dot"></span><span class="tl-line"></span></div>
+        <div class="card">
+          <div class="tl-meta">Mar 2023 — Mar 2025 · <span class="t" data-en="Damascus, Syria" data-ar="دمشق، سوريا">Damascus, Syria</span></div>
+          <h3><span class="t" data-en="Robotics Mentor" data-ar="مرشد روبوتيكس">Robotics Mentor</span></h3>
+          <div class="company"><span class="t" data-en="National Center for Distinguished (NCD)" data-ar="المركز الوطني للمتميزين (NCD)">National Center for Distinguished (NCD)</span></div>
+          <p><span class="t" data-en="Mentored teams for ARC, WRO, and the Future Science Challenge. Designed custom training modules around problem-solving and applied robotics." data-ar="أرشدتُ فرقاً في مسابقات ARC وWRO وFuture Science Challenge. صمّمتُ وحدات تدريبية مخصّصة تركّز على حل المشكلات والروبوتيكس التطبيقي.">Mentored teams for ARC, WRO, and the Future Science Challenge. Designed custom training modules around problem-solving and applied robotics.</span></p>
+          <div class="tags"><span class="tag">Competition Coaching</span><span class="tag">Applied Robotics</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="sec" id="projects">
+  <div class="wrap">
+    <span class="label"><span class="t" data-en="Portfolio" data-ar="الأعمال">Portfolio</span></span>
+    <h2><span class="t" data-en="Featured" data-ar="أبرز">Featured</span> <span class="accent"><span class="t" data-en="Projects" data-ar="المشاريع">Projects</span></span></h2>
+    <p class="intro"><span class="t" data-en="A selection of robotics, AI and IoT projects — shipped, in development, and personal R&amp;D." data-ar="مجموعة مختارة من مشاريع الروبوتيكس والذكاء الصناعي وإنترنت الأشياء — مشاريع منشورة وأخرى قيد التطوير وأبحاث شخصية.">A selection of robotics, AI and IoT projects — shipped, in development, and personal R&amp;D.</span></p>
+    <div class="pgrid">
+      
+      <div class="card pcard">
+        <div class="pcard-top"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        <span class="pcat"><span class="t" data-en="Robotronics · Robotics" data-ar="روبوترونيكس · روبوتيكس">Robotronics · Robotics</span></span>
+        <h3><span class="t" data-en="Solar Panel Cleaning Robot" data-ar="روبوت تنظيف الألواح الشمسية">Solar Panel Cleaning Robot</span></h3>
+        <p><span class="t" data-en="Remote-controlled robot for cleaning photovoltaic solar panels — currently in active development. Targets renewable-energy maintenance in arid environments where dust dramatically reduces panel efficiency." data-ar="روبوت يُدار بالريموت كنترول لتنظيف الألواح الكهروضوئية — قيد التطوير حالياً. يستهدف صيانة منظومات الطاقة المتجدّدة في البيئات الجافة حيث يقلّل الغبار من كفاءة الألواح بشكل كبير.">Remote-controlled robot for cleaning photovoltaic solar panels — currently in active development. Targets renewable-energy maintenance in arid environments where dust dramatically reduces panel efficiency.</span></p>
+        <div class="tags"><span class="tag soft">RC</span><span class="tag soft">PCB</span><span class="tag soft">3D Print</span><span class="tag soft">Solar</span></div>
+        <div class="pfoot"><a href="https://robotronicsevo.com"><span class="t" data-en="robotronicsevo.com" data-ar="robotronicsevo.com">robotronicsevo.com</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+      </div>
+      <div class="card pcard">
+        <div class="pcard-top"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        <span class="pcat"><span class="t" data-en="3D Titans · Platform" data-ar="3D Titans · منصة">3D Titans · Platform</span></span>
+        <h3><span class="t" data-en="3D Titans — Syria's 3D Printing Pioneer" data-ar="3D Titans — رائد الطباعة ثلاثية الأبعاد في سوريا">3D Titans — Syria's 3D Printing Pioneer</span></h3>
+        <p><span class="t" data-en="Founded the venture that brought 3D printing into the Syrian market. Marketplace for production-ready 3D assets plus on-demand fabrication and licensing workflows." data-ar="المشروع الذي أدخل الطباعة ثلاثية الأبعاد إلى السوق السوري. سوق رقمية للأصول الثلاثية الأبعاد الجاهزة للإنتاج إضافةً إلى خدمات تصنيع عند الطلب وتراخيص.">Founded the venture that brought 3D printing into the Syrian market. Marketplace for production-ready 3D assets plus on-demand fabrication and licensing workflows.</span></p>
+        <div class="tags"><span class="tag soft">3D Print</span><span class="tag soft">Marketplace</span><span class="tag soft">SaaS</span></div>
+        <div class="pfoot"><a href="https://3dtitans.org"><span class="t" data-en="3dtitans.org" data-ar="3dtitans.org">3dtitans.org</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+      </div>
+      <div class="card pcard">
+        <div class="pcard-top"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="ribbon"><span class="t" data-en="In Development" data-ar="قيد التطوير">In Development</span></span></div>
+        <span class="pcat"><span class="t" data-en="actuators.me · Startup OS" data-ar="actuators.me · منصة ريادة الأعمال">actuators.me · Startup OS</span></span>
+        <h3><span class="t" data-en="actuators.me — Syria's Entrepreneurship OS" data-ar="actuators.me — نظام التشغيل لريادة الأعمال في سوريا">actuators.me — Syria's Entrepreneurship OS</span></h3>
+        <p><span class="t" data-en="The operating system for post-conflict entrepreneurship. Syria's first digital backbone for founders, teams, and the capital that connects them. Founder, currently building the platform." data-ar="نظام التشغيل لريادة الأعمال في مرحلة ما بعد النزاع. أول بنية تحتية رقمية في سوريا للمؤسسين والفِرق ورأس المال الذي يربط بينهم. أعمل عليها كمؤسس، وهي قيد التطوير حالياً.">The operating system for post-conflict entrepreneurship. Syria's first digital backbone for founders, teams, and the capital that connects them. Founder, currently building the platform.</span></p>
+        <div class="tags"><span class="tag soft">Startup OS</span><span class="tag soft">Entrepreneurship</span><span class="tag soft">Founders</span><span class="tag soft">Capital</span></div>
+        <div class="pfoot"><a href="https://actuators.me"><span class="t" data-en="actuators.me" data-ar="actuators.me">actuators.me</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+      </div>
+      <div class="card pcard">
+        <div class="pcard-top"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="ribbon"><span class="t" data-en="In Development" data-ar="قيد التطوير">In Development</span></span></div>
+        <span class="pcat"><span class="t" data-en="DTS · Smart City" data-ar="DTS · مدينة ذكية">DTS · Smart City</span></span>
+        <h3><span class="t" data-en="Damascus Transportation System (DTS)" data-ar="مشروع تنظيم النقل في دمشق (DTS)">Damascus Transportation System (DTS)</span></h3>
+        <p><span class="t" data-en="In-development smart-city project aimed at solving Damascus traffic congestion through data-driven transport optimization. Currently iterating on the web platform." data-ar="مشروع مدينة ذكية قيد التطوير يهدف إلى حلّ الاختناق المروري في دمشق عبر تحليل البيانات وتحسين النقل. حالياً نعمل على تطوير المنصة الإلكترونية.">In-development smart-city project aimed at solving Damascus traffic congestion through data-driven transport optimization. Currently iterating on the web platform.</span></p>
+        <div class="tags"><span class="tag soft">Smart City</span><span class="tag soft">Optimization</span><span class="tag soft">Web</span></div>
+        <div class="pfoot"><a href="https://dts-brown.vercel.app"><span class="t" data-en="dts-brown.vercel.app" data-ar="dts-brown.vercel.app">dts-brown.vercel.app</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+      </div>
+      <div class="card pcard">
+        <div class="pcard-top"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        <span class="pcat"><span class="t" data-en="CleanTech · R&amp;D" data-ar="تقنيات نظيفة · بحث وتطوير">CleanTech · R&amp;D</span></span>
+        <h3><span class="t" data-en="Solar-to-Water Atmospheric Generator" data-ar="مولّد ماء بالطاقة الشمسية">Solar-to-Water Atmospheric Generator</span></h3>
+        <p><span class="t" data-en="Converts solar energy into drinkable water for remote regions, using atmospheric water condensation that borrows from the working principle of an air conditioner. Designed for off-grid deployments." data-ar="مشروع تحويل الطاقة الشمسية إلى مياه شرب في المناطق النائية باستخدام تكثيف المياه من الجو على مبدأ عمل المكيّف. مصمَّم للنشر في المناطق غير المرتبطة بالشبكة.">Converts solar energy into drinkable water for remote regions, using atmospheric water condensation that borrows from the working principle of an air conditioner. Designed for off-grid deployments.</span></p>
+        <div class="tags"><span class="tag soft">Solar</span><span class="tag soft">Thermodynamics</span><span class="tag soft">Humanitarian</span></div>
+        <div class="pfoot"><span class="muted"><span class="t" data-en="Case study coming soon" data-ar="دراسة الحالة قريباً">Case study coming soon</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </div>
+      <div class="card pcard">
+        <div class="pcard-top"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        <span class="pcat"><span class="t" data-en="MedTech · Assistive Device" data-ar="تقنيات طبية · جهاز مساعِد">MedTech · Assistive Device</span></span>
+        <h3><span class="t" data-en="Smart Spoon for Parkinson's Patients" data-ar="الملعقة الذكية لمرضى باركنسون">Smart Spoon for Parkinson's Patients</span></h3>
+        <p><span class="t" data-en="Active-stabilization spoon that produces counter-motion to cancel the involuntary tremor of Parkinson's patients, keeping the spoon level so patients can eat independently." data-ar="ملعقة ذات تثبيت نشط تنتج حركة معاكسة للحركة الاهتزازية اللاإرادية لمرضى باركنسون، تحافظ على ثبات الملعقة كي يتمكّن المريض من تناول الطعام باستقلالية.">Active-stabilization spoon that produces counter-motion to cancel the involuntary tremor of Parkinson's patients, keeping the spoon level so patients can eat independently.</span></p>
+        <div class="tags"><span class="tag soft">IMU</span><span class="tag soft">Active Control</span><span class="tag soft">Healthcare</span></div>
+        <div class="pfoot"><span class="muted"><span class="t" data-en="Case study coming soon" data-ar="دراسة الحالة قريباً">Case study coming soon</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </div>
+      <div class="card pcard">
+        <div class="pcard-top"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        <span class="pcat"><span class="t" data-en="Communications · R&amp;D" data-ar="اتصالات · بحث وتطوير">Communications · R&amp;D</span></span>
+        <h3><span class="t" data-en="Laser Voice Transmission via Li-Fi" data-ar="نقل الصوت عبر الليزر باستخدام Li-Fi">Laser Voice Transmission via Li-Fi</span></h3>
+        <p><span class="t" data-en="Voice transmission over a modulated laser beam using Li-Fi (light fidelity) technology — wireless audio without radio spectrum, line-of-sight, with potential for secure point-to-point links." data-ar="نقل الصوت عبر شعاع ليزر مُعدَّل باستخدام تقنية Li-Fi — صوت لاسلكي بدون طيف الراديو، ضمن خط البصر، مع إمكانية إنشاء وصلات نقطة-إلى-نقطة آمنة.">Voice transmission over a modulated laser beam using Li-Fi (light fidelity) technology — wireless audio without radio spectrum, line-of-sight, with potential for secure point-to-point links.</span></p>
+        <div class="tags"><span class="tag soft">Li-Fi</span><span class="tag soft">Laser</span><span class="tag soft">Optical Comms</span></div>
+        <div class="pfoot"><span class="muted"><span class="t" data-en="Case study coming soon" data-ar="دراسة الحالة قريباً">Case study coming soon</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </div>
+      <div class="card pcard">
+        <div class="pcard-top"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="ribbon"><span class="t" data-en="In Development" data-ar="قيد التطوير">In Development</span></span></div>
+        <span class="pcat"><span class="t" data-en="Aerospace · Personal R&amp;D" data-ar="فضاء · بحث شخصي">Aerospace · Personal R&amp;D</span></span>
+        <h3><span class="t" data-en="Anti-Drone Interceptor Drone" data-ar="الدرون الاعتراضية للدرونات">Anti-Drone Interceptor Drone</span></h3>
+        <p><span class="t" data-en="Personal R&amp;D project: an interceptor drone designed to detect and neutralize hostile drones. Currently in active development." data-ar="مشروع شخصي قيد التطوير: درون اعتراضي مصمَّم لرصد وتحييد الدرونات المعادية.">Personal R&amp;D project: an interceptor drone designed to detect and neutralize hostile drones. Currently in active development.</span></p>
+        <div class="tags"><span class="tag soft">UAV</span><span class="tag soft">Detection</span><span class="tag soft">Defense</span></div>
+        <div class="pfoot"><span class="muted"><span class="t" data-en="Case study coming soon" data-ar="دراسة الحالة قريباً">Case study coming soon</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </div>
+      <div class="card pcard">
+        <div class="pcard-top"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="ribbon"><span class="t" data-en="🏆 Best Engineer 2025" data-ar="🏆 أفضل مهندس 2025">🏆 Best Engineer 2025</span></span></div>
+        <span class="pcat"><span class="t" data-en="AI / IoT · Award Winner" data-ar="ذكاء صناعي / إنترنت الأشياء · فائز بجائزة">AI / IoT · Award Winner</span></span>
+        <h3><span class="t" data-en="Smart Home Electricity Forecasting" data-ar="التنبؤ باستهلاك كهرباء المنزل الذكي">Smart Home Electricity Forecasting</span></h3>
+        <p><span class="t" data-en="ML system that forecasts smart-home electricity consumption and recommends concrete actions to reduce it. Won the Best Engineer award (Professionals) at the Rashid bin Hamdan bin Rashid AI &amp; IoT Competition 2025." data-ar="نظام تعلّم آلة يتنبّأ باستهلاك الكهرباء في المنزل الذكي ويقترح طرقاً لتخفيض الاستهلاك. حاز جائزة أفضل مهندس (فئة المحترفين) في مسابقة راشد بن حمدان بن راشد للذكاء الصنعي وإنترنت الأشياء 2025.">ML system that forecasts smart-home electricity consumption and recommends concrete actions to reduce it. Won the Best Engineer award (Professionals) at the Rashid bin Hamdan bin Rashid AI &amp; IoT Competition 2025.</span></p>
+        <div class="tags"><span class="tag soft">ML</span><span class="tag soft">IoT</span><span class="tag soft">Energy</span><span class="tag soft">Forecasting</span></div>
+        <div class="pfoot"><span class="muted"><span class="t" data-en="Case study coming soon" data-ar="دراسة الحالة قريباً">Case study coming soon</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </div>
+      <div class="card pcard">
+        <div class="pcard-top"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        <span class="pcat"><span class="t" data-en="Robotics · WRO 2024" data-ar="روبوتيكس · WRO 2024">Robotics · WRO 2024</span></span>
+        <h3><span class="t" data-en="Omni-Wheel Product Sorting Line" data-ar="خط فرز المنتجات بدواليب الأومني">Omni-Wheel Product Sorting Line</span></h3>
+        <p><span class="t" data-en="Automated product sorting line built on omni-directional wheels for the World Robot Olympiad 2024 — vision-based classification driving multi-axis mechanical sorting." data-ar="خط فرز منتجات آلي مبني على دواليب أومني-اتجاهية لمسابقة WRO 2024 — تصنيف بصري يُحرّك آلية فرز ميكانيكية متعدّدة المحاور.">Automated product sorting line built on omni-directional wheels for the World Robot Olympiad 2024 — vision-based classification driving multi-axis mechanical sorting.</span></p>
+        <div class="tags"><span class="tag soft">Omni Wheels</span><span class="tag soft">Vision</span><span class="tag soft">Automation</span></div>
+        <div class="pfoot"><span class="muted"><span class="t" data-en="WRO 2024 entry" data-ar="مشاركة WRO 2024">WRO 2024 entry</span></span></div>
+      </div>
+      <div class="card pcard">
+        <div class="pcard-top"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="ribbon"><span class="t" data-en="🥇 1st place — Syria" data-ar="🥇 المركز الأول على سوريا">🥇 1st place — Syria</span></span></div>
+        <span class="pcat"><span class="t" data-en="Robotics · ARC 2026" data-ar="روبوتيكس · ARC 2026">Robotics · ARC 2026</span></span>
+        <h3><span class="t" data-en="Sumo Combat Robot" data-ar="روبوت السومو القتالي">Sumo Combat Robot</span></h3>
+        <p><span class="t" data-en="Custom-built sumo robot for the Annual Robotic Competition (ARC) 2026 — 1st place nationally in Syria. Focus on traction, low-profile chassis design and opponent-tracking strategy." data-ar="روبوت سومو مصمَّم خصيصاً لمسابقة ARC 2026 — حصل على المركز الأول على سوريا. التركيز على الجرّ وتصميم الهيكل المنخفض واستراتيجية تعقّب الخصم.">Custom-built sumo robot for the Annual Robotic Competition (ARC) 2026 — 1st place nationally in Syria. Focus on traction, low-profile chassis design and opponent-tracking strategy.</span></p>
+        <div class="tags"><span class="tag soft">Combat</span><span class="tag soft">Robotics</span><span class="tag soft">Strategy</span></div>
+        <div class="pfoot"><span class="muted"><span class="t" data-en="Case study coming soon" data-ar="دراسة الحالة قريباً">Case study coming soon</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </div>
+      <div class="card pcard">
+        <div class="pcard-top"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        <span class="pcat"><span class="t" data-en="Graduation Project · AI/Robotics" data-ar="مشروع تخرّج · ذكاء صناعي/روبوتيكس">Graduation Project · AI/Robotics</span></span>
+        <h3><span class="t" data-en="Vision-Based Waste Sorting System" data-ar="نظام فرز النفايات بالرؤية الحاسوبية">Vision-Based Waste Sorting System</span></h3>
+        <p><span class="t" data-en="Automated waste classification and mechanical sorting driven by computer-vision object detection. Achieved ~40% efficiency improvement in waste segregation." data-ar="تصنيف وفرز النفايات آلياً عبر كشف الأجسام بالرؤية الحاسوبية. حقّق تحسيناً بنحو 40% في كفاءة الفرز.">Automated waste classification and mechanical sorting driven by computer-vision object detection. Achieved ~40% efficiency improvement in waste segregation.</span></p>
+        <div class="tags"><span class="tag soft">Object Detection</span><span class="tag soft">Python</span><span class="tag soft">Automation</span></div>
+        <div class="pfoot"><span class="muted"><span class="t" data-en="Case study coming soon" data-ar="دراسة الحالة قريباً">Case study coming soon</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="sec alt" id="achievements">
+  <div class="wrap center">
+    <span class="label"><span class="t" data-en="Recognition" data-ar="التكريم">Recognition</span></span>
+    <h2><span class="t" data-en="Awards &amp;" data-ar="الجوائز">Awards &amp;</span> <span class="accent"><span class="t" data-en="Competitions" data-ar="والمسابقات">Competitions</span></span></h2>
+    <p class="intro cen"><span class="t" data-en="Awards earned across Syrian and international robotics, AI and IoT competitions." data-ar="جوائز حازها يحيى في مسابقات الروبوتيكس والذكاء الصناعي وإنترنت الأشياء، محلياً وعالمياً.">Awards earned across Syrian and international robotics, AI and IoT competitions.</span></p>
+  </div>
+  <div class="wrap">
+    <div class="agrid">
+      
+      <div class="card acard">
+        <div class="ayear">2025</div>
+        <h3><span class="t" data-en="Best Engineer — Professionals" data-ar="أفضل مهندس — فئة المحترفين">Best Engineer — Professionals</span></h3>
+        <div class="aorg"><span class="t" data-en="Rashid bin Hamdan bin Rashid AI &amp; IoT Competition" data-ar="مسابقة راشد بن حمدان بن راشد للذكاء الصنعي وإنترنت الأشياء">Rashid bin Hamdan bin Rashid AI &amp; IoT Competition</span></div>
+        <div class="aloc"><span class="t" data-en="UAE · International" data-ar="الإمارات · دولي">UAE · International</span></div>
+        <span class="prize"><span class="t" data-en="🏆 Best Engineer Award" data-ar="🏆 جائزة أفضل مهندس">🏆 Best Engineer Award</span></span>
+      </div>
+      <div class="card acard">
+        <div class="ayear">2026</div>
+        <h3><span class="t" data-en="1st Place · Syria — Sumo Category" data-ar="المركز الأول · سوريا — فئة السومو">1st Place · Syria — Sumo Category</span></h3>
+        <div class="aorg"><span class="t" data-en="Annual Robotic Competition (ARC)" data-ar="المسابقة السنوية للروبوت (ARC)">Annual Robotic Competition (ARC)</span></div>
+        <div class="aloc"><span class="t" data-en="Syria" data-ar="سوريا">Syria</span></div>
+        <span class="prize"><span class="t" data-en="🥇 National Winner" data-ar="🥇 بطل على مستوى سوريا">🥇 National Winner</span></span>
+      </div>
+      <div class="card acard">
+        <div class="ayear">2024</div>
+        <h3><span class="t" data-en="WRO Future Innovators" data-ar="WRO Future Innovators">WRO Future Innovators</span></h3>
+        <div class="aorg"><span class="t" data-en="World Robot Olympiad — Omni-Wheel Sorting Line" data-ar="الأولمبياد العالمي للروبوت — خط فرز بدواليب الأومني">World Robot Olympiad — Omni-Wheel Sorting Line</span></div>
+        <div class="aloc"><span class="t" data-en="Syria" data-ar="سوريا">Syria</span></div>
+        <span class="prize"><span class="t" data-en="🥉 3rd Place" data-ar="🥉 المركز الثالث">🥉 3rd Place</span></span>
+      </div>
+      <div class="card acard">
+        <div class="ayear">2024</div>
+        <h3><span class="t" data-en="1st Place — Annual Robotic Competition" data-ar="المركز الأول — المسابقة السنوية للروبوت">1st Place — Annual Robotic Competition</span></h3>
+        <div class="aorg"><span class="t" data-en="ARC Syria" data-ar="ARC سوريا">ARC Syria</span></div>
+        <div class="aloc"><span class="t" data-en="Syria" data-ar="سوريا">Syria</span></div>
+        <span class="prize"><span class="t" data-en="🥇 National Winner" data-ar="🥇 بطل على مستوى سوريا">🥇 National Winner</span></span>
+      </div>
+      <div class="card acard">
+        <div class="ayear">2025</div>
+        <h3><span class="t" data-en="Senior Best Engineer" data-ar="أفضل مهندس — فئة الكبار">Senior Best Engineer</span></h3>
+        <div class="aorg"><span class="t" data-en="Future Science Challenge" data-ar="تحدّي علوم المستقبل">Future Science Challenge</span></div>
+        <div class="aloc"><span class="t" data-en="UAE" data-ar="الإمارات">UAE</span></div>
+        <span class="prize"><span class="t" data-en="🏆 Senior Category" data-ar="🏆 فئة الكبار">🏆 Senior Category</span></span>
+      </div>
+      <div class="card acard">
+        <div class="ayear">2023</div>
+        <h3><span class="t" data-en="Take the Lead Program" data-ar="برنامج Take the Lead">Take the Lead Program</span></h3>
+        <div class="aorg"><span class="t" data-en="Cornell University" data-ar="جامعة كورنيل">Cornell University</span></div>
+        
+        <span class="prize"><span class="t" data-en="Certificate of Completion" data-ar="شهادة إتمام">Certificate of Completion</span></span>
+      </div>
+      <div class="card acard">
+        <div class="ayear">2023</div>
+        <h3><span class="t" data-en="Certified LEGO EV3 Trainer" data-ar="مدرّب معتمَد LEGO EV3">Certified LEGO EV3 Trainer</span></h3>
+        <div class="aorg"><span class="t" data-en="Syrian Robotic Academy" data-ar="الأكاديمية السورية للروبوت">Syrian Robotic Academy</span></div>
+        
+        <span class="prize"><span class="t" data-en="Trainer Certification" data-ar="شهادة تدريب">Trainer Certification</span></span>
+      </div>
+      <div class="card acard">
+        <div class="ayear">2018</div>
+        <h3><span class="t" data-en="Cisco CCNA Routing &amp; Switching" data-ar="Cisco CCNA Routing &amp; Switching">Cisco CCNA Routing &amp; Switching</span></h3>
+        <div class="aorg"><span class="t" data-en="Cisco Systems" data-ar="Cisco Systems">Cisco Systems</span></div>
+        
+        <span class="prize"><span class="t" data-en="Networking Certification" data-ar="شهادة شبكات">Networking Certification</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="sec" id="skills">
+  <div class="wrap">
+    <span class="label"><span class="t" data-en="Technical Arsenal" data-ar="الترسانة التقنية">Technical Arsenal</span></span>
+    <h2><span class="t" data-en="Skills &amp;" data-ar="المهارات">Skills &amp;</span> <span class="accent"><span class="t" data-en="Expertise" data-ar="والخبرات">Expertise</span></span></h2>
+    <div class="sgrid">
+      
+      <div class="card">
+        <h4><span class="t" data-en="Programming" data-ar="البرمجة">Programming</span></h4>
+        <div class="tags"><span class="tag soft">Python</span><span class="tag soft">C / C++</span><span class="tag soft">Arduino C</span><span class="tag soft">MATLAB</span><span class="tag soft">JavaScript</span></div>
+      </div>
+      <div class="card">
+        <h4><span class="t" data-en="Robotics &amp; AI" data-ar="الروبوتيكس والذكاء الصناعي">Robotics &amp; AI</span></h4>
+        <div class="tags"><span class="tag soft">ROS</span><span class="tag soft">Computer Vision</span><span class="tag soft">Object Detection</span><span class="tag soft">Machine Learning</span><span class="tag soft">Raspberry Pi</span><span class="tag soft">Arduino</span></div>
+      </div>
+      <div class="card">
+        <h4><span class="t" data-en="Electronics &amp; Hardware" data-ar="الإلكترونيات والعتاد">Electronics &amp; Hardware</span></h4>
+        <div class="tags"><span class="tag soft">PCB Design</span><span class="tag soft">Embedded Systems</span><span class="tag soft">Sensors</span><span class="tag soft">Actuators</span><span class="tag soft">3D Printing</span><span class="tag soft">Mechanical Design</span></div>
+      </div>
+      <div class="card">
+        <h4><span class="t" data-en="Networking &amp; IT" data-ar="الشبكات وتقنية المعلومات">Networking &amp; IT</span></h4>
+        <div class="tags"><span class="tag soft">Cisco CCNA</span><span class="tag soft">Packet Tracer</span><span class="tag soft">IT Infrastructure</span><span class="tag soft">IoT</span></div>
+      </div>
+      <div class="card">
+        <h4><span class="t" data-en="Leadership" data-ar="القيادة">Leadership</span></h4>
+        <div class="tags"><span class="tag soft">System Design</span><span class="tag soft">Technical Leadership</span><span class="tag soft">Mentoring</span><span class="tag soft">Curriculum Design</span></div>
+      </div>
+      <div class="card">
+        <h4><span class="t" data-en="Tools" data-ar="الأدوات">Tools</span></h4>
+        <div class="tags"><span class="tag soft">Proteus</span><span class="tag soft">mikroC</span><span class="tag soft">8086 Emulator</span><span class="tag soft">Processing</span><span class="tag soft">Git / GitHub</span></div>
+      </div>
+    </div>
+    <div class="edu">
+      <h3 class="eduhead"><span class="t" data-en="Academic" data-ar="الأساس">Academic</span> <span class="accent"><span class="t" data-en="Foundation" data-ar="الأكاديمي">Foundation</span></span></h3>
+      <div class="card educard">
+        <h4><span class="t" data-en="Bachelor of Engineering — Control &amp; Computer Engineering, Robotics Specialization" data-ar="بكالوريوس هندسة — التحكم والحاسوب، اختصاص الروبوتيكس">Bachelor of Engineering — Control &amp; Computer Engineering, Robotics Specialization</span></h4>
+        <div class="company"><span class="t" data-en="Syrian Private University · Faculty of Control &amp; Computer Engineering" data-ar="الجامعة السورية الخاصة · كلية هندسة التحكم والحاسوب">Syrian Private University · Faculty of Control &amp; Computer Engineering</span></div>
+        <div class="years">2016 — 2024</div>
+        <div class="eduproj"><span class="label sm"><span class="t" data-en="Graduation Project" data-ar="مشروع التخرّج">Graduation Project</span></span><b><span class="t" data-en="Waste Sorting System Using Object Detection" data-ar="نظام فرز نفايات باستخدام كشف الأجسام">Waste Sorting System Using Object Detection</span></b><p><span class="t" data-en="Designed and implemented an automated vision-based waste classification and mechanical sorting system. Achieved ~40% efficiency improvement in waste segregation versus baseline." data-ar="تصميم وتنفيذ نظام آلي لتصنيف النفايات وفرزها ميكانيكياً بالاعتماد على الرؤية الحاسوبية. تحقيق تحسين بنحو 40% في كفاءة الفرز مقارنة بالخط المرجعي.">Designed and implemented an automated vision-based waste classification and mechanical sorting system. Achieved ~40% efficiency improvement in waste segregation versus baseline.</span></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="sec alt" id="contact">
+  <div class="wrap center">
+    <span class="label"><span class="t" data-en="Get In Touch" data-ar="تواصل معي">Get In Touch</span></span>
+    <h2><span class="t" data-en="Let's Build" data-ar="لنبنِ">Let's Build</span> <span class="accent"><span class="t" data-en="Something Real" data-ar="شيئاً حقيقياً">Something Real</span></span></h2>
+    <p class="intro cen"><span class="t" data-en="Open to engineering collaborations, robotics partnerships, speaking, and mentoring opportunities." data-ar="منفتح على التعاونات الهندسية وشراكات الروبوتيكس والمحاضرات وفرص الإرشاد.">Open to engineering collaborations, robotics partnerships, speaking, and mentoring opportunities.</span></p>
+    <div class="cgrid">
+      <a class="card ccard" href="mailto:yahyademeriah@gmail.com"><div class="clabel"><span class="t" data-en="Email" data-ar="البريد الإلكتروني">Email</span></div><div class="cval">yahyademeriah@gmail.com</div></a><a class="card ccard" href="https://www.linkedin.com/in/yahya-demeriah"><div class="clabel"><span class="t" data-en="LinkedIn" data-ar="لينكدإن">LinkedIn</span></div><div class="cval">@yahya-demeriah</div></a><a class="card ccard" href="https://github.com/XYHDX"><div class="clabel"><span class="t" data-en="GitHub" data-ar="غيت هَب">GitHub</span></div><div class="cval">@XYHDX</div></a><a class="card ccard" href="https://x.com/YDemeriah78064"><div class="clabel"><span class="t" data-en="X / Twitter" data-ar="إكس / تويتر">X / Twitter</span></div><div class="cval">@YDemeriah78064</div></a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap fgrid">
+    <div><h3 class="logo">DEMERIAH<span class="accent">.</span></h3><p class="lead"><span class="t" data-en="Robotics &amp; AI Engineer building practical, production-ready systems from Damascus — and mentoring the next generation of Syrian engineers." data-ar="مهندس روبوتيكس وذكاء صناعي يبني أنظمة عملية جاهزة للإنتاج من دمشق — ويُدرّب الجيل القادم من المهندسين السوريين.">Robotics &amp; AI Engineer building practical, production-ready systems from Damascus — and mentoring the next generation of Syrian engineers.</span></p></div>
+    <div class="fnav"><a href="#about"><span class="t" data-en="About" data-ar="نبذة">About</span></a><a href="#experience"><span class="t" data-en="Experience" data-ar="الخبرات">Experience</span></a><a href="#projects"><span class="t" data-en="Projects" data-ar="المشاريع">Projects</span></a><a href="#achievements"><span class="t" data-en="Awards" data-ar="الجوائز">Awards</span></a><a href="#skills"><span class="t" data-en="Skills" data-ar="المهارات">Skills</span></a><a href="#contact"><span class="t" data-en="Contact" data-ar="تواصل">Contact</span></a></div>
+  </div>
+  <div class="wrap fbar"><span class="t" data-en="© 2026 Yahya Demeriah · Built with engineering &amp; care" data-ar="© 2026 يحيى ضميرية · بُني بهندسة وعناية">© 2026 Yahya Demeriah · Built with engineering &amp; care</span></div>
+</footer>
+<script>
+(function(){
+  function pref(k,d){try{return localStorage.getItem(k)||d}catch(e){return d}}
+  var lang=pref('yd-lang','en'), theme=pref('yd-theme','light');
+  function apply(){
+    var h=document.documentElement;
+    h.setAttribute('data-theme',theme);
+    h.setAttribute('lang',lang);
+    document.body.setAttribute('dir',lang==='ar'?'rtl':'ltr');
+    var ns=document.querySelectorAll('.t');
+    for(var i=0;i<ns.length;i++){var v=ns[i].getAttribute('data-'+lang);if(v!=null)ns[i].textContent=v;}
+    document.getElementById('langBtn').textContent=lang==='en'?'العربية':'English';
+    document.getElementById('themeBtn').textContent=theme==='dark'?'☀︎':'☾';
+  }
+  window.addEventListener('DOMContentLoaded',function(){
+    document.getElementById('langBtn').onclick=function(){lang=lang==='en'?'ar':'en';try{localStorage.setItem('yd-lang',lang)}catch(e){}apply()};
+    document.getElementById('themeBtn').onclick=function(){theme=theme==='dark'?'light':'dark';try{localStorage.setItem('yd-theme',theme)}catch(e){}apply()};
+    apply();
+  });
+})();
+</script>
+</body>
+</html>

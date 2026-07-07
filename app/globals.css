@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ==================== SYRIAN NATIONAL IDENTITY PALETTE ====================
+   Primary : Dark Teal-Green (modernized flag green)
+   Secondary: Qasioun Gold (Damascus mountain sunsets)
+   Base    : warm parchment (light) / deep evergreen night (dark)
+   ========================================================================= */
+
+/* LIGHT THEME (default) — parchment + teal-green + Qasioun gold */
+:root {
+  --bg: #ede6d4;
+  --bg-elev: #f7f1de;
+  --bg-card: #f7f1de;
+  --bg-card-hover: #e6dec8;
+  --border: #d2c8ac;
+  --border-strong: #b5a884;
+  --text: #162622;
+  --text-dim: #4a5a52;
+  --text-soft: #6e7d72;
+  --accent: #0e4d40;
+  --accent-2: #a8843d;
+  --accent-3: #8b1a1a;
+  --nav-bg: rgba(237, 230, 212, 0.82);
+  --chip-bg: rgba(14, 77, 64, 0.08);
+  --shadow: 0 18px 50px -25px rgba(40, 30, 15, 0.22);
+  --shadow-glow: 0 0 40px -10px rgba(14, 77, 64, 0.30);
+  /* rgb triplets used by the interactive hero canvas */
+  --hero-particle: 14, 77, 64;
+  --hero-link: 168, 132, 61;
+  --radius: 16px;
+}
+
+/* DARK THEME — deep evergreen night + brighter green & gold */
+.dark {
+  --bg: #0a1612;
+  --bg-elev: #102019;
+  --bg-card: #102019;
+  --bg-card-hover: #163024;
+  --border: #1e3a2c;
+  --border-strong: #2a4f3d;
+  --text: #ede5cf;
+  --text-dim: #a3ad9d;
+  --text-soft: #74807a;
+  --accent: #2d9b7e;
+  --accent-2: #d4b878;
+  --accent-3: #cf3a4a;
+  --nav-bg: rgba(10, 22, 18, 0.78);
+  --chip-bg: rgba(45, 155, 126, 0.10);
+  --shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 40px -10px rgba(45, 155, 126, 0.35);
+  --hero-particle: 45, 155, 126;
+  --hero-link: 212, 184, 120;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-ar: var(--font-cairo), var(--font-inter), sans-serif;
+
+  --color-bg: var(--bg);
+  --color-bg-elev: var(--bg-elev);
+  --color-card: var(--bg-card);
+  --color-card-hover: var(--bg-card-hover);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text: var(--text);
+  --color-dim: var(--text-dim);
+  --color-soft: var(--text-soft);
+  --color-accent: var(--accent);
+  --color-accent2: var(--accent-2);
+  --color-accent3: var(--accent-3);
+
+  --radius-sm: 10px;
+  --radius-lg: var(--radius);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  body[dir="rtl"] {
+    font-family: var(--font-cairo), var(--font-inter), sans-serif;
+  }
+  ::selection {
+    background: var(--accent);
+    color: #fff;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+}
+
+@keyframes yd-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(207, 58, 74, 0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(207, 58, 74, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(207, 58, 74, 0); }
+}
